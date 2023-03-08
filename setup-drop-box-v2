@@ -90,4 +90,4 @@ EOF
 chmod ugo+x /etc/rc.local
 
 
-echo Done.
+echo Done
