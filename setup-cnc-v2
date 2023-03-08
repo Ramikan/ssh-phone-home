@@ -27,9 +27,9 @@ ssh-keygen -f /home/$DBUSER/.ssh/id_rsa -N ""
 cat /home/$DBUSER/.ssh/id_rsa.pub >> /home/$DBUSER/.ssh/authorized_keys
 chown -R $DBUSER /home/$DBUSER
 
-# Make the SSH service listen on port 443 in addition to 22
-if [ "$(grep 'Port 443' /etc/ssh/sshd_config)" == "" ] ; then 
-    sed -i 's/Port 22/Port 22\nPort 443/g' /etc/ssh/sshd_config
+# Make the SSH service listen on port 80 in addition to 22
+if [ "$(grep 'Port 80' /etc/ssh/sshd_config)" == "" ] ; then 
+    sed -i 's/Port 22/Port 22\nPort 80/g' /etc/ssh/sshd_config
 fi
 
 # Enable root login over SSH using  a password
